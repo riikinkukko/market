@@ -10,7 +10,11 @@
             {{ item.0 }}
             {{ item.1 }}
             {{ item.2 }}
-            <img src="/media/{{ item.3 }}">
+            <a href="http://127.0.0.1:8000/index/{{ item.4 }}"><img src="/media/{{ item.3 }}"></a>
+            <form method="post">
+                {% csrf_token %}
+                <button name="button-delete" value="{{ item.4 }}">Удалить</button>
+            </form>
         </div>
         <br>
         <hr>

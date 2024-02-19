@@ -9,6 +9,10 @@
     {{ i.name }}
     {{ i.short_description }}
   <img src="{{ i.image.url }}" >
+  <form method="post">
+      {% csrf_token %}
+      <button class="btn btn-primary" type="submit" name="btn-good" value="{{ i.id }}">В корзину</button>
+  </form>
   {% endfor %}
 </body>
 </html>
